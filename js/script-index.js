@@ -5,6 +5,8 @@ $(document).ready( function() {
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 
+  renderActivities(activitiesArray);
+
 });
 
 function printNews () {
@@ -63,7 +65,7 @@ function renderRecipe(recipe) {
   spanIcon.addClass('icon-bookmark');
 
   var img = $('<img/>');
-  img.attr('src', recipe.source.url);
+  img.attr('src','img/recipes/320x350/'+recipe.name+'.jpg');
 
   spanBookmarks.append(spanIcon);
   spanMetadata.append(spanAuthor, spanBookmarks);
