@@ -1,4 +1,3 @@
-$(document).ready( function(){
+$(document).ready( function() {
 	$('.js-menu').hide();
-
 });

@@ -1,4 +1,4 @@
-$(document).ready( function(){
+$(document).ready( function() {
 	$('.js-back').hide();
 	
 	printNews();
@@ -9,8 +9,8 @@ $(document).ready( function(){
 
 function printNews () {
 	var nueva = $('.callout-news').children('p');
-	nueva.text('NUEVAS RECETAS');
-	console.log(nueva);
+  //console.log(nueva);
+  nueva.text('NUEVAS RECETAS');
 }
 
 /*
@@ -19,6 +19,14 @@ function printNews () {
 */
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
+
+	for(var i = 0; i < recipesArray.length; i++) {
+    //console.log(recipesArray[i]);
+    if (recipesArray[i].highlighted == true) {
+      //console.log(recipesArray[i]);
+      renderRecipe(i);
+    }
+  }
 }
 
 /*
