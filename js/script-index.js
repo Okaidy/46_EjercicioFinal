@@ -18,13 +18,14 @@ function printNews () {
 * marcado el atributo "highlighted" como TRUE
 */
 function renderHighlightedRecipes(recipesArray) {
-	console.log('Recipes: ', recipesArray);
+	//console.log('Recipes: ', recipesArray);
 
 	for(var i = 0; i < recipesArray.length; i++) {
     //console.log(recipesArray[i]);
     if (recipesArray[i].highlighted == true) {
-      //console.log(recipesArray[i]);
-      renderRecipe(i);
+      var recipe = recipesArray[i];
+      // console.log(recipe);
+      renderRecipe(recipe);
     }
   }
 }
@@ -37,6 +38,39 @@ function renderHighlightedRecipes(recipesArray) {
 */
 function renderRecipe(recipe) {
 	console.log('Voy a pintar la receta: ', recipe);
+
+  var a = $('<a></a>');
+  a.addClass('item-recipe');
+
+  var spanAttribution = $('<span></span');
+  spanAttribution.addClass('attribution');
+
+  var spanTitle = $('<span></span');
+  spanTitle.addClass('title-recipe');
+  spanTitle.text(recipe.title);
+
+  var spanMetadata = $('<span></span>');
+  spanMetadata.addClass('metadata-recipe');
+
+  var spanAuthor = $('<span></span>');
+  spanAuthor.addClass('author-recipe');
+  spanAuthor.text(recipe.source.name);
+
+  var spanBookmarks = $('<span></span>');
+  spanBookmarks.addClass('bookmarks-recipe');
+
+  var spanIcon = $('<span></span>');
+  spanIcon.addClass('icon-bookmark');
+
+  var img = $('<img/>');
+  img.attr('src', recipe.source.url);
+
+  spanBookmarks.append(spanIcon);
+  spanMetadata.append(spanAuthor, spanBookmarks);
+  spanAttribution.append(spanTitle, spanMetadata);
+  a.append(spanAttribution, img);
+
+  $('.list-recipes').append(a);
 }
 
 
