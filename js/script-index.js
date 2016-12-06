@@ -82,6 +82,17 @@ function renderRecipe(recipe) {
 */
 function renderActivities(activitiesArray) {
 	console.log('Activities: ', activitiesArray);
+
+  if(activitiesArray.length>0) {
+    $('.wrapper-message').hide();
+  }
+
+  for(var j = 0; j < activitiesArray.length; j++) {
+    var activity = activitiesArray[j];
+    renderActivity(activity);
+    console.log('actividad',activity);
+  }
+
 }
 
 /*
