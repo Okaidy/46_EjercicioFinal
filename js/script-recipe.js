@@ -3,6 +3,10 @@ $(document).ready( function() {
 	$('.js-menu').hide();
 
   showItems();
+
+  $('.js-back').click(function() {
+    window.location='index.html';
+  });
 });
 
 function showItems() {
