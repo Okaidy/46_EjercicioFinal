@@ -9,10 +9,14 @@ function showItems() {
   $('.js-show-recipe').click(function () {
     console.log('recipe');
     $('.page.recipe').removeClass('make');
+    $(this).addClass('active');
+    $('.js-show-make').removeClass('active');
   });
 
   $('.js-show-make').click(function () {
     console.log('make');
     $('.page.recipe').addClass('make');
+    $(this).addClass('active');
+    $('.js-show-recipe').removeClass('active');
   });
 }
